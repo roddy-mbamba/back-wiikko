@@ -1,0 +1,6 @@
+django
+django-filter
+djangorestframework
+psycopg2
+whitenoise
+pillow==9.0.1

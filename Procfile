@@ -1,0 +1,1 @@
+web: gunicorn matanga.wsgi --log-file -

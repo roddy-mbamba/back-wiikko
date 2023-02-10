@@ -1,6 +1,10 @@
 django
 django-filter
 djangorestframework
+pyJWT
+django-cors-headers
+djangorestframework-simplejwt==4.7.2
+djangorestframework-simplejwt[crypto]
 psycopg2
 whitenoise
 pillow==9.0.1

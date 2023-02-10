@@ -7,7 +7,15 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ["id","username","email","password"]
+    def create(self, validated_data):
+        password=validated_data.pop('password',None)
+        instance=self.Meta.model(**validated_data)
+        if(password is not None):
+            instance.set_password(password)
+            instance.save()
+        return super().create(validated_data)
+
 
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:

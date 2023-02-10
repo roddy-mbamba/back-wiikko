@@ -16,10 +16,10 @@ class Message(models.Model):
 
     msg = models.TextField(null=False,blank=False)
     createAt = models.DateTimeField(auto_now_add=True, null=True)
-    UpdateAt = models.DateTimeField(auto_now=True)
-    user = models.ManyToManyField(
+    updateAt = models.DateTimeField(auto_now=True)
+    users = models.ManyToManyField(
         User, related_name="message_user", null=False)
 
     def __str__(self):
-        return self.user
+        return self.msg
 
